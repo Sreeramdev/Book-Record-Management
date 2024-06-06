@@ -129,7 +129,7 @@ usersRouter.get("/subscription-details/:id",(req,res)=>{
     let subscriptionExpiration = subscriptionType(subscriptionDate)
 
     const data ={
-        ...users,
+        ...user,
         subscriptionExpired : subscriptionExpiration < currentDate,
         daysLeftForExpiration : subscriptionExpiration <= currentDate ?  0 : subscriptionExpiration - currentDate,
         fine:
